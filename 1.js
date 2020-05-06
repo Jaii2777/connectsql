@@ -1,7 +1,11 @@
-var http = require('http');
-
-//create a server object:
-http.createServer(function (req, res) {
-  res.write('Hello World!'); //write a response to the client
-  res.end(); //end the response
-}).listen(8080);
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'employee'
+});
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('Connected!');
+});cd
