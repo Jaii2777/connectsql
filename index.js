@@ -5,13 +5,11 @@ const bodyparser=require('body-parser');
 
 app.use(bodyparser.json);
 
-
 var mysqlConnection=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'root',
-    database:'student',
-   // port:3308
+    database:'sampledb'
 });
 
 mysqlConnection.connect((err)=>
@@ -22,27 +20,18 @@ mysqlConnection.connect((err)=>
                 console.log("somthing wrong"+ json.stringify(err,undefined,2));
 });
 
-app.listen(3008,()=>console.log("excute in 3008"));
-
-app.get('/studentinfo',(req,res)=>{
-mysqlConnection.query('SELECT * FROM studentinfo',(err, rows, fields)=>
+app.set("port",process.env.PORT || 3000);
+app.listen(app.get("port"),function(){
+    console.log("server Started");
+});
+app.get('/myguests',(req,res)=>{
+mysqlConnection.query('SELECT * FROM myguests',(err, rows, fields)=>
 {
-        if(!err)
+    console.log("in");    
+    if(!err)
         console.log(rows);
         else
         console.log(err);
         
     })
 });
-app.get('/studentinfo/:id',(req,res)=>{
-    mysqlConnection.query('SELECT  FROM studentinfo WHERE id= ?',[req.params.id],(err, rows, fields)=>
-    {
-            if(!err)
-            res.send("deleted successfully");
-            else
-            console.log(err);
-            
-        })
-    });
-    
-

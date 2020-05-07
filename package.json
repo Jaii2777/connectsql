@@ -2,15 +2,20 @@
   "name": "nodeproject",
   "version": "1.0.0",
   "description": "",
-  "main": "1.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
-  }
+    "express-fileupload": "^1.1.7-alpha.3",
+    "mysql": "^2.18.1",
+    "req-flash": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Start":"node app"
+  },
+  "author": "",
+  "license": "ISC"
 }
