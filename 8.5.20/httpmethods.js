@@ -52,7 +52,7 @@ app.delete('/customers/:id', function(request, response){
 
     });
 });
-app.delete('/customers', function(request, response){
+/*app.delete('/customers', function(request, response){
     console.log('GET request received at /') 
     let cus=request.body;
     var sql="SET @id=? ;SET @name=?;SET @mail=?;\ CALL  OK(@id,@name,@mail);";
@@ -66,7 +66,7 @@ app.delete('/customers', function(request, response){
         }
 
     });
-});
+});*/
 
 // listen for trafic and display on localhost:9000
 app.listen(9000, function () {
