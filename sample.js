@@ -1,8 +1,9 @@
+var mysql = require('mysql');
 var express=require("express");
 var router=express.Router();
-var mysql = require('mysql');
 
-var con = mysql.createConnection({
+
+var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     database:"mydb",
